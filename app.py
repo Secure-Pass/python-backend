@@ -27,6 +27,10 @@ app.register_blueprint(blueprint=auth_app,url_prefix="/auth")
 ##Credentials Manager
 app.register_blueprint(blueprint=userDocs_app,url_prefix="/userDocs")
 
+@app.route("/")
+def hello():
+    return "Website version Not yet developed"
+
 if __name__=="__main__":
     app.run(debug=True)
 
