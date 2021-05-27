@@ -1,7 +1,7 @@
 from flask_login import current_user, login_user ,login_required , logout_user
 from flask import Blueprint , jsonify , Response , request , make_response
 from flask_sqlalchemy import BaseQuery
-from .models import db , CredentialDocs , User
+from models import db , CredentialDocs , User
 from sys import stdout
 from datetime import datetime
 

@@ -3,9 +3,9 @@ from flask_migrate import Migrate
 from flask_login import current_user, login_user ,login_required , logout_user
 from flask_cors import CORS
 
-from .models import db,login_manager,User
-from .auth import auth_blue_print as auth_app
-from .userDocs import userDocsBluePrint as userDocs_app
+from models import db,login_manager,User
+from auth import auth_blue_print as auth_app
+from userDocs import userDocsBluePrint as userDocs_app
 import os
 
 app = Flask(__name__)
@@ -32,5 +32,5 @@ def hello():
     return "Website version Not yet developed"
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0")
 

@@ -1,7 +1,7 @@
 from flask_login import current_user, login_user ,login_required , logout_user
 from flask import Blueprint , jsonify , Response , request , make_response
 from flask_sqlalchemy import BaseQuery
-from .models import User , db , CredentialDocs
+from models import User , db , CredentialDocs
 
 auth_blue_print = Blueprint('auth',__name__)
 
