@@ -10,7 +10,7 @@ db = SQLAlchemy()
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(80), unique=True)
-    password_hash = db.Column(db.String())
+    password_hash = db.Column(db.String(130))
     credentialDocs = db.relationship("CredentialDocs",backref="owner",cascade="all, delete-orphan")
     emailVerified = db.Column(db.Boolean)
     def set_password(self,password):
@@ -24,8 +24,8 @@ class User(UserMixin, db.Model):
 datetime.utcnow().timestamp()
 class CredentialDocs(db.Model):
     id = db.Column(db.Integer,primary_key=True)
-    domainname = db.Column(db.String(20))
-    credentials = db.Column(db.String)
+    domainname = db.Column(db.String(30))
+    credentials = db.Column(db.String(300))
     owner_id = db.Column(db.Integer,db.ForeignKey("user.id"))
     lastUpdateTimeStamp = db.Column(
             db.Integer ,
